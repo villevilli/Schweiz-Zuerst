@@ -17,7 +17,6 @@ focus_tree = {
         id = SWI_army_reform
         x = 2
         y = 0
-        icon = GFX_goal_generic_support_fascism
         cost = 10
         completion_reward = {
 
@@ -26,11 +25,12 @@ focus_tree = {
 
     focus = {
         id = SWI_organize_the_national_front
+        icon = GFX_goal_support_fascism
         x = 0
         y = 0
         cost = 10
         completion_reward = {
-
+            add_ideas = SWI_national_front
         }
     }
 
