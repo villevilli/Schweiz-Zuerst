@@ -1,0 +1,135 @@
+focus_tree = {
+    id = swiss_focus
+
+    country = {
+        factor = 0
+        
+        modifier = {
+            add = 10
+            tag = SWI
+        }
+    }
+
+    default = no
+    reset_on_civil_war = true
+
+    focus = {
+        id = SWI_army_reform
+        x = 2
+        y = 0
+        icon = GFX_goal_generic_support_fascism
+        cost = 10
+        completion_reward = {
+
+        }
+    }
+
+    focus = {
+        id = SWI_organize_the_national_front
+        x = 0
+        y = 0
+        cost = 10
+        completion_reward = {
+
+        }
+    }
+
+    focus = {
+        id = foo
+        x = 0
+        y = 1
+        relative_position_id = SWI_organize_the_national_front
+        cost = 10
+        completion_reward = {
+
+        }
+        prerequisite = {
+            focus = SWI_organize_the_national_front
+        }
+    }
+
+    focus = {
+        id = fee
+        x = 0
+        y = 1
+        relative_position_id = foo
+        cost = 10
+        completion_reward = {
+
+        }
+        prerequisite = {
+            focus = foo
+        }
+    }
+    focus = {
+        id = SWI_prepare_revolution
+        x = -1
+        y = 1
+        relative_position_id = fee
+        cost = 10
+       
+        mutually_exclusive = {
+            focus = SWI_prepare_democratic_proceeding
+        }
+
+        prerequisite = {
+            focus = fee
+        }
+        completion_reward = {
+
+        }
+    }
+
+    focus = {
+        id = SWI_submit_ultimatum
+        x = 0
+        y = 1
+        relative_position_id = SWI_prepare_revolution
+        cost = 10
+        prerequisite = { focus = SWI_prepare_revolution }
+        completion_reward = {
+
+        }
+    }
+
+    focus = {
+        id = SWI_prepare_democratic_proceeding
+        x = 1
+        y = 1
+        relative_position_id = fee
+        cost = 10
+
+        mutually_exclusive = {
+            focus = SWI_prepare_revolution
+        }
+
+        prerequisite = {
+            focus = fee
+        }
+        completion_reward = {
+
+        }
+    }
+
+    focus = {
+        id = SWI_submit_referendum
+        x = 0
+        y = 1
+        relative_position_id = SWI_prepare_democratic_proceeding
+        cost = 10
+        prerequisite = { focus = SWI_prepare_democratic_proceeding }
+    }
+
+    focus = {
+        id = SWI_finalize_nationalist_gov
+        x = -1
+        y = 1
+        relative_position_id = SWI_submit_referendum
+        cost = 10
+
+        prerequisite = {
+            focus = SWI_submit_referendum
+            focus = SWI_submit_ultimatum
+        }
+    }
+}
